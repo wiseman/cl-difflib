@@ -1,0 +1,15 @@
+2005-02-24 CL-DIFFLIB 0.2
+
+* Fewer warnings in SBCL.
+
+* unified-diff and context-diff can now take a :junk-function
+  argument.
+
+* Checking for junk is much faster now when there is no
+  :junk-function.
+
+
+2005-02-03 CL-DIFFLIB 0.1
+
+* Initial release.
+
