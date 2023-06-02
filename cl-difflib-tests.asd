@@ -18,9 +18,7 @@
 
 (asdf:defsystem :cl-difflib-tests
     :depends-on (:cl-difflib)
-    :components ((:file "unit-tests")))
-
-(defmethod asdf:perform ((o asdf:test-op) (c (eql (find-system :cl-difflib-tests))))
-  (or (funcall (intern (symbol-name '#:run-tests)
-                       (find-package '#:difflib-test)))
-      (error "test-op failed")))
+    :components ((:file "unit-tests"))
+    :perform (test-op (o s)
+                      (unless (uiop:symbol-call :difflib-test '#:run-tests)
+                        (error "test-op failed"))))

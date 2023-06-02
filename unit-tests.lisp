@@ -99,7 +99,8 @@
 	(test-similarity-ratio)
 	(test-close-matches)
 	(test-unified-diff)
-	(test-context-diff))
+	(test-context-diff)
+        (null *failed-tests*))
     (end-tests)))
 
 

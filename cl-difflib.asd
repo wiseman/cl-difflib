@@ -22,12 +22,8 @@
     :description "A Lisp library for computing differences between sequences."
     :long-description "A Lisp library for computing differences between sequences.  Based on Python's difflib module."
     
+    :in-order-to ((test-op (test-op "cl-difflib-tests")))
     :components ((:file "package")
 		 (:file "difflib" :depends-on ("package"))
 		 (:static-file "LICENSE.txt")
 		 (:static-file "NEWS.txt")))
-
-
-(defmethod perform ((o test-op) (c (eql (find-system 'cl-difflib))))
-  (oos 'load-op 'cl-difflib-tests)
-  (oos 'test-op 'cl-difflib-tests :force t))
